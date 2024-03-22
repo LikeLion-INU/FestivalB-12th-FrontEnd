@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR:wght@100..900&display=swap');
 
 * {margin: 0; padding: 0; box-sizing: border-box;}
 
@@ -10,7 +10,7 @@ btn-area-2 -> 확인 버튼
 */
 
 body {
-    font-family: "Nanum Gothic", sans-serif;
+    font-family: "Noto Sans KR", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
