@@ -2,6 +2,13 @@
 
 * {margin: 0; padding: 0; box-sizing: border-box;}
 
+/*
+loginform
+int-area -> 입력창
+btn-area-1 -> 여성,남성 버튼
+btn-area-2 -> 확인 버튼
+*/
+
 body {
     font-family: "Nanum Gothic", sans-serif;
     display: flex;
@@ -40,47 +47,53 @@ body {
     font-size: 18px; color: #000;
  }
 
-.btn-area-1 button, .btn-area-2 button {
+ .btn-area-1 {
+    margin-top: 40px;
+}
+
+ .btn-area-1 #sex {
     width: 312px;
-    height: 50px;
-    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 12px;
+ }
+
+ .btn-area-1 button {
+    width: 120px; /* 여성, 남성 버튼의 너비 조절 */
+    height: 44px;
+    font-size: 18px;
     border: none;
-    border-radius: 12px;
+    border-radius: 25px;
+    align-items: center;
     cursor: pointer;
+    margin: 0 5px; /* 여성, 남성 버튼 사이의 간격 조절 */
 }
 
 .btn-area-1 button:hover {
-    background-color: #FF5A7A;
+    border: 1px solid #FF7CA3;
+    border-radius: 25px;
+    background-color: #FFE5ED;
 }
 
 .btn-area-2 button {
+    width: 312px;
+    height: 50px;
+    font-size: 20px;
+    border: none;
+    border-radius: 12px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     background: #F1F1F1;
     color: #000000;
     transition: background-color 0.3s ease;
 }
 
-.btn-area-2 button:hover {
-    background-color: #DADADA;
+.btn-area-2 button:hover,
+.btn-area-2 button:visited {
+    background-color: #FF7CA3;
+    color: #fff;
 }
 
 
-.btn-area-1 {
-    margin-top: 30px; /* 여성, 남성 버튼과의 간격 조절 */
-    text-align: center;
-}
 
-.btn-area-1 button {
-    width: 146px; /* 여성, 남성 버튼의 너비 조절 */
-    height: 50px;
-    font-size: 24px;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    margin: 0 5px; /* 여성, 남성 버튼 사이의 간격 조절 */
-}
 
-.btn-area-2 {
-    margin-top: 30px; /* 여성, 남성 버튼과의 간격 조절 */
-    text-align: center;
-}
 
