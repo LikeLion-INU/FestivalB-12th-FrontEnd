@@ -92,7 +92,8 @@ span {
   
 }
 .question-container > button:hover {
-  background: #FF7CA3;
+  background:#FFE5ED;
+  border: 1px solid #FF7CA3 ;
 }
 .btn-next {
   margin-top: 30px;
