@@ -36,3 +36,103 @@
     transform: rotate(360deg);
   }
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR:wght@100..900&display=swap');
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+/*
+loginform
+int-area -> 입력창
+btn-area-1 -> 여성,남성 버튼
+btn-area-2 -> 확인 버튼
+*/
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+ body::before {
+    content: "";
+    position: absolute; z-index: 1;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background-color: #ffffff;
+ }
+
+ .login-form {
+    position: relative; z-index: 2;
+ }
+
+ .login-form img{
+    width: 255px; height: 55px; 
+    color: #FF7CA3;
+    display: block; margin: auto;
+    margin-bottom: 90px;
+ }
+
+ .int-area {width: 312px;}
+
+ .int-area input {
+    width: 312px; height: 48px;
+    padding: 10px 15px 10px;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 8px;
+    font-size: 18px; color: #000;
+ }
+
+ .btn-area-1 {
+    margin-top: 40px;
+}
+
+ .btn-area-1 #sex {
+    width: 312px;
+    margin-top: 20px;
+    margin-bottom: 12px;
+ }
+
+ .btn-area-1 button {
+    width: 120px;
+    height: 44px;
+    font-size: 18px;
+    border: none;
+    border-radius: 25px;
+    align-items: center;
+    cursor: pointer;
+    margin: 0 5px; 
+}
+
+.btn-area-1 button:hover {
+    border: 1px solid #FF7CA3;
+    border-radius: 25px;
+    background-color: #FFE5ED;
+}
+
+.btn-area-2 button {
+    width: 312px;
+    height: 50px;
+    font-size: 20px;
+    border: none;
+    border-radius: 12px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background: #F1F1F1;
+    color: #000000;
+    transition: background-color 0.3s ease;
+}
+
+.btn-area-2 button:hover,
+.btn-area-2 button:visited {
+    background-color: #FF7CA3;
+    color: #fff;
+}
+
+
+
+
+
