@@ -1,5 +1,4 @@
 import AnimalKeyWord from "../../../components/units/animalKeyWord/animal.container";
-import styled from "@emotion/styled";
 import * as S from "../../../components/units/questionStyle/question";
 export default function MyKeyWordPage() {
   return (
