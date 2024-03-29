@@ -4,13 +4,39 @@ export const Icon = styled(LeftOutlined)`
   color: #ff7ca3;
   font-size: 25px;
 `;
-export const Container = styled.div`
-  position: relative;
+export const Wrapper = styled.div`
   width: 375px;
   height: 812px;
-  text-align: center;
-  margin: auto;
-  border: 1px solid gainsboro;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+export const QuestionGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 30px;
+`;
+export const Question = styled.div`
+  font-family: Noto Sans KR;
+  font-weight: 500;
+  font-size: 24px;
+`;
+
+export const NaviGroup = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+`;
+export const Navi = styled.img`
+  margin-top: 50px;
+`;
+
+export const Option = styled.div`
+  font-family: Noto Sans KR;
+  font-size: 24px;
+  font-weight: 500;
+  color: #ababab;
 `;
 export const PrevBtn = styled.button`
   position: absolute;
@@ -29,13 +55,16 @@ export const Title = styled.div`
   font-size: 24px;
   font-weight: 600;
 `;
+export const Point = styled.div`
+  color: #ff7ca3;
+`;
 export const Margin = styled.div`
   margin-top: 100px; /* 291px-146px = 145px */
 `;
 export const QuestionWrapper = styled.div`
   display: block;
   width: 90%;
-  margin: auto; /* 수평 가운데 정렬 */
+  margin-top: 70px; /* 수평 가운데 정렬 */
 `;
 export const QuestionBtn = styled.div`
   background: #f0f0f0;
@@ -47,7 +76,8 @@ export const QuestionBtn = styled.div`
   font-size: 20px;
   font-weight: 600;
   text-align: left;
-  padding-left: 40px;
+  line-height: 80px;
+  padding-left: 50px;
   :hover {
     background: #ffe5ed;
     border: 1px solid #ff7ca3;

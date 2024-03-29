@@ -1,11 +1,11 @@
-import AnimalKeyWord from "../../../components/units/animalKeyWord/animal.container";
-import * as S from "../../../components/units/questionStyle/question";
+import AnimalKeyWord from "./animal.container";
+import * as S from "../commonQuestion/question.styles";
 export default function MyKeyWordPage() {
   return (
     <>
       <S.Wrapper>
         <div>
-          <S.BackNavi src="/images/arrow.png" />
+          <S.Navi src="/images/arrow.png" />
         </div>
         <S.QuestionGroup>
           <S.Question>질문 7</S.Question>

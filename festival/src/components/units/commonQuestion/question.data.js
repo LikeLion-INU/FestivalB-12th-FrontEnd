@@ -9,6 +9,7 @@ export const questions = [
       { value: "175 이하" },
       { value: "175 이상" },
     ],
+    multioption: true,
   },
   {
     questionMain: "질문 2",
