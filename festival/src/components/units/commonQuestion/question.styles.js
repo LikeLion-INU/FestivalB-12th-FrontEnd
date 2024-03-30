@@ -16,6 +16,7 @@ export const QuestionGroup = styled.div`
   justify-content: center;
   margin-top: 30px;
 `;
+
 export const Question = styled.div`
   font-family: Noto Sans KR;
   font-weight: 500;

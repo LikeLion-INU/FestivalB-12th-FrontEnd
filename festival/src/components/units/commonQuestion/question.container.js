@@ -12,7 +12,7 @@ export default function QuestionContainerPage() {
     }
   };
   const onClickNext = () => {
-    if (page_number < questions.length) {
+    if (page_number < questions.length - 1) {
       navigate(`/mykeyWord/${Number(page_number) + 1}`);
     }
   };
