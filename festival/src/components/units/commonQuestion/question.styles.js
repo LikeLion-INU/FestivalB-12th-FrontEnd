@@ -9,7 +9,6 @@ export const Wrapper = styled.div`
   height: 812px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 `;
 export const QuestionGroup = styled.div`
   display: flex;

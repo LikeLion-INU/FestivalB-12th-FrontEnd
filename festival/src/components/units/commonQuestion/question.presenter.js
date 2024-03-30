@@ -5,7 +5,7 @@ import { Progress } from "antd";
 export default function QuestionPresenterPage(props) {
   return (
     <>
-      {props.page_number === 6 ? (
+      {props.page_number == 6 ? (
         <AnimalPage />
       ) : (
         <S.Wrapper>
@@ -13,7 +13,7 @@ export default function QuestionPresenterPage(props) {
             <S.Navi src="/images/left_arrow.png" onClick={props.onClickPrev} />
             <S.Navi src="/images/right_arrow.png" onClick={props.onClickNext} />
           </S.NaviGroup>
-          <Progress percent={props.page_number * 8} />
+          <Progress percent={props.page_number * 8} strokeColor="#FF7CA3" />
           <S.QuestionGroup>
             <S.Question>{questions[props.page_number].questionMain}</S.Question>
             <S.Question>
@@ -25,12 +25,14 @@ export default function QuestionPresenterPage(props) {
             <S.Option>
               {questions[props.page_number].multioption ? "(복수선택가능)" : ""}
             </S.Option>
+          </S.QuestionGroup>
+          <div>
             <S.QuestionWrapper>
               {questions[props.page_number].options.map((option) => (
                 <S.QuestionBtn key={option.value}>{option.value}</S.QuestionBtn>
               ))}
             </S.QuestionWrapper>
-          </S.QuestionGroup>
+          </div>
         </S.Wrapper>
       )}
     </>

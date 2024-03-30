@@ -5,7 +5,7 @@ export default function MyKeyWordPage() {
     <>
       <S.Wrapper>
         <div>
-          <S.Navi src="/images/arrow.png" />
+          <S.Navi src="/images/left_arrow.png" />
         </div>
         <S.QuestionGroup>
           <S.Question>질문 7</S.Question>
