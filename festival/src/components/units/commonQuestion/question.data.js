@@ -11,7 +11,7 @@ export const questions = [
   },
   {
     questionMain: "질문 2",
-    questionSub: "를 선택해주세요",
+    questionSub: "를 입력해주세요",
     emphaticWord: "나이",
     options: [
       { value: "연상" }, 
@@ -59,15 +59,6 @@ export const questions = [
     questionSub: "을 선택해주세요",
     emphaticWord: "닮은 동물",
     options: [
-      { value: "강아지" }, 
-      { value: "고양이" },
-      { value: "공룡" },
-      { value: "늑대" },
-      { value: "여우" },
-      { value: "곰" },
-      { value: "꼬북이" },
-      { value: "토끼" },
-      { value: "햄스터" },
     ],
     multioption: true,
   },

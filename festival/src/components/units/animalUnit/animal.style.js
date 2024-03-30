@@ -36,7 +36,7 @@ export const Icon = styled.img`
   padding: 15px;
 `;
 export const Name = styled.div`
-  width: 50px;
+  width: 55px;
   height: 26px;
   font-size: 18px;
   font-weight: 500;
