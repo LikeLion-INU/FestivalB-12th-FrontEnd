@@ -17,7 +17,7 @@ export default function QuestionPresenterPage(props) {
             <span style={{ color: "#ff7ca3" }}>
               {questions[props.page_number].emphaticWord}
             </span>
-            을 선택해주세요
+            {questions[props.page_number].questionSub}
           </S.Question>
         </S.QuestionGroup>
         <S.Option>
