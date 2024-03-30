@@ -13,9 +13,8 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<MainPage />}></Route>
-        <Route path="/myKeyWord" element={<MyKeyWordPage />}></Route>
         <Route path="/mykeyWord/:id" element={<KeywordQuestion />}></Route>
-        <Route path="/idealKeyWord" element={<IdealKeyWordPage />}></Route>
+        <Route path="/idealKeyWord/:id" element={<IdealKeyWordPage />}></Route>
         <Route path="/matching" element={<MatchingPage />}></Route>
         <Route path="/result" element={<ResultPage />}></Route>
         <Route path="/end" element={<EndPage />}></Route>

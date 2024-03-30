@@ -1,4 +1,4 @@
-import * as S from "../animalUnit/animal.style";
+import * as S from "./animal.style";
 export default function AnimalPresenter() {
   return (
     <S.Wrapper>
