@@ -10,7 +10,7 @@ export default function QuestionPresenterPage(props) {
           <S.Navi src="/images/left_arrow.png" onClick={props.onClickPrev} />
           <S.Navi src="/images/right_arrow.png" onClick={props.onClickNext} />
         </S.NaviGroup>
-        <Progress percent={props.page_number * 8} strokeColor="#FF7CA3" />
+        <Progress percent={props.page_number * 10} strokeColor="#FF7CA3" />
         <S.QuestionGroup>
           <S.Question>{questions[props.page_number].questionMain}</S.Question>
           <S.Question>
@@ -23,7 +23,7 @@ export default function QuestionPresenterPage(props) {
         <S.Option>
           {questions[props.page_number].multioption ? "(복수선택가능)" : ""}
         </S.Option>
-        {props.page_number == 6 ? <AnimalComponent /> : ""}
+        {props.page_number == 5 ? <AnimalComponent /> : ""}
         <S.QuestionWrapper>
           {questions[props.page_number].options.map((option) => (
             <S.QuestionBtn key={option.value}>{option.value}</S.QuestionBtn>

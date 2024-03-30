@@ -14,6 +14,8 @@ export default function QuestionContainerPage() {
   const onClickNext = () => {
     if (page_number < questions.length - 1) {
       navigate(`/mykeyWord/${Number(page_number) + 1}`);
+    } else if (page_number == questions.length - 1) {
+      navigate("/matching");
     }
   };
   return (
