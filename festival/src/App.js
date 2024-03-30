@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<MainPage />}></Route>
+        <Route path="/main" element={<MainPage />}></Route>
         <Route path="/mykeyWord/:id" element={<KeywordQuestion />}></Route>
         <Route path="/idealKeyWord/:id" element={<IdealKeyWordPage />}></Route>
         <Route path="/matching" element={<MatchingPage />}></Route>
