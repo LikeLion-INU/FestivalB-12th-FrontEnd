@@ -13,11 +13,7 @@ export const questions = [
     questionMain: "질문 2",
     questionSub: "를 입력해주세요",
     emphaticWord: "나이",
-    options: [
-      { value: "연상" }, 
-      { value: "연하" }, 
-      { value: "동갑" },
-    ],
+    options: [{ value: "연상" }, { value: "연하" }, { value: "동갑" }],
   },
   {
     questionMain: "질문 3",
