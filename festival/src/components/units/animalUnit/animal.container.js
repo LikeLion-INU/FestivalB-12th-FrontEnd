@@ -1,4 +1,4 @@
-import AnimalPresenter from "../animalKeyWord/animal.presenter";
+import AnimalPresenter from "./animal.presenter";
 export default function AnimalComponent() {
   return <AnimalPresenter />;
 }
