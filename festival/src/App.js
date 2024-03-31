@@ -9,6 +9,7 @@ import ResultPage from "./pages/resultPage/result";
 import EndPage from "./pages/endPage/end";
 import KeywordQuestion from "./pages/myKeyWordPage/index";
 function App() {
+  //최고 관리자
   return (
     <div className="App">
       <Routes>

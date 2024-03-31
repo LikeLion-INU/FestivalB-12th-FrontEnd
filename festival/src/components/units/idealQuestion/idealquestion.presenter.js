@@ -6,6 +6,14 @@ import { Modal } from "antd";
 import { useState } from "react";
 export default function IdealPresenterPage(props) {
   const [isModalOpen, setIsModalOpen] = useState(true);
+  const selectedOptionStyle = {
+    backgroundColor: "#ffe5ed", // 분홍색
+    border: "1px solid #ff7ca3",
+  };
+  const selectedCancel = {
+    backgroundColor: "#f0f0f0",
+    border: "none",
+  };
   return (
     <>
       {props.page_number == 0 ? (
@@ -57,7 +65,22 @@ export default function IdealPresenterPage(props) {
         {props.page_number == 6 ? <AnimalComponent /> : ""}
         <S.QuestionWrapper>
           {questions[props.page_number].options.map((option) => (
-            <S.QuestionBtn key={option.value}>{option.value}</S.QuestionBtn>
+            <S.QuestionBtn
+              id={option.value}
+              key={option.value}
+              onClick={
+                questions[props.page_number].multioption
+                  ? props.onClickMultiOption
+                  : props.onClickSingleOption
+              }
+              style={
+                props.isChecked.includes(option.value)
+                  ? selectedOptionStyle
+                  : selectedCancel
+              }
+            >
+              {option.value}
+            </S.QuestionBtn>
           ))}
         </S.QuestionWrapper>
       </S.Wrapper>

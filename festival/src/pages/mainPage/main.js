@@ -1,5 +1,5 @@
-import React from 'react';
-import * as S from "../mainPage/main.style.js";
+import React from "react";
+import * as S from "./main.style";
 
 function MainPage() {
   return (
@@ -9,15 +9,15 @@ function MainPage() {
         <S.InputArea>
           <S.InputLabel>인스타그램 아이디를 입력하세요</S.InputLabel>
           <S.Input
-            type="text" 
-            name="id" 
-            id="id" 
+            type="text"
+            name="id"
+            id="id"
             placeholder="ex) @ lion1234"
-            autoComplete="off" 
-            required 
+            autoComplete="off"
+            required
           />
         </S.InputArea>
-                
+
         <S.ButtonArea1>
           <S.ButtonLabel>성별을 선택하세요</S.ButtonLabel>
           <S.Button1 type="submit">여성</S.Button1>

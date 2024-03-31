@@ -60,7 +60,6 @@ export const questions = [
     questionSub: "을 선택해주세요",
     emphaticWord: "닮은 동물",
     options: [],
-    multioption: true,
   },
   {
     questionMain: "질문 8",
