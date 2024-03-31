@@ -1,6 +1,7 @@
 import * as S from "./question.styles";
 import { questions } from "./question.data";
 import AnimalComponent from "../animalUnit/animal.container";
+import AgeHeightComponent from "../ageHeightUnit/ageHeight.container";
 import { Progress } from "antd";
 export default function QuestionPresenterPage(props) {
   const selectedOptionStyle = {
@@ -30,7 +31,9 @@ export default function QuestionPresenterPage(props) {
         </S.QuestionGroup>
         <S.Option>
           {questions[props.page_number].multioption ? "(복수선택가능)" : ""}
+          {props.page_number == 1 ? "(만 나이 X)" : ""}
         </S.Option>
+        {props.page_number == 1 ? <AgeHeightComponent /> : ""}
         {props.page_number == 5 ? <AnimalComponent /> : ""}
         <S.QuestionWrapper>
           {questions[props.page_number].options.map((option) => (
