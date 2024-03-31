@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 export const Wrapper = styled.div`
   width: 375px;
   height: 812px;
-  border: 1px solid #bdbdbd;
+  // border: 1px solid #bdbdbd;
 `;
 
 export const Title = styled.div`
