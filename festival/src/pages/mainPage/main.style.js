@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 export const Wrapper = styled.div`
   width: 375px;
   height: 812px;
+  font-family: "Noto Sans KR";
   // border: 1px solid #bdbdbd;
 `;
 
@@ -47,15 +48,16 @@ export const ButtonArea1 = styled.p`
 
 export const ButtonLabel = styled.p`
   font-size: 14px;
-  font-weight: 400px;
+  font-weight: 500px;
   margin-left: -95px;
 `;
 
 export const Button1 = styled.button`
   width: 100px;
   height: 40px;
+  font-family: "Noto Sans KR";
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   border: none;
   border-radius: 25px;
   cursor: pointer;
@@ -79,9 +81,4 @@ export const Button2 = styled.button`
   border-radius: 12px;
   background: #f1f1f1;
   color: #222222;
-  &:hover {
-    background-color: #ff7ca3;
-    color: #fff;
-    box-shadow: 0px 1px 10.899999618530273px 0px #00000040;
-  }
 `;
