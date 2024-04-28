@@ -67,20 +67,19 @@ export const QuestionWrapper = styled.div`
   margin-top: 70px; /* 수평 가운데 정렬 */
 `;
 export const QuestionBtn = styled.div`
-  background: #f0f0f0;
+  background-color: ${(props) => (props.isChecked ? "#ffe5ed" : "#F0F0F0")};
   width: 328px;
   height: 80px;
   margin-bottom: 15px;
   border-radius: 8px;
-  border: none;
+  border: ${(props) => (props.isChecked ? "1px solid #ff7ca3" : "none")};
   font-size: 20px;
   font-weight: 600;
   text-align: left;
   line-height: 80px;
   padding-left: 50px;
-  :hover {
-    background: #ffe5ed;
-    border: 1px solid #ff7ca3;
+  &:hover {
+    background-color: #ffe5ed;
   }
 `;
 export const NextBtn = styled.button`

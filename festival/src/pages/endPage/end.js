@@ -2,6 +2,7 @@ import * as S from "../../styles/endStyle";
 import { InstagramOutlined, CopyOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import { message } from "antd";
+import { data } from "../../data";
 export default function EndPage() {
   const [instagram, setInstagram] = useState("rnjsehzz");
   //서버에서 받아와서 state 값 설정

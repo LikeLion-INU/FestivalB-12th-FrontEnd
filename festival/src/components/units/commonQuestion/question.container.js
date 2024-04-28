@@ -3,11 +3,31 @@ import { useNavigate } from "react-router-dom";
 import { questions } from "./question.data";
 import { useState } from "react";
 import QuestionPresenterPage from "./question.presenter";
-export default function QuestionContainerPage() {
+export default function QuestionContainerPage(props) {
+  // const Mykeyword = {
+  //   memberId,
+  //   myHeight,
+  //   myAge,
+  //   myHairStyle, //헤어스타일
+
+  //   myIsDoubleEyelid, //쌍커풀 유무
+
+  //   mySimilarAnimals, //닮은 동물
+
+  //   myDepartment, // 학과
+
+  //   myWorkOut, // 3대 500 여부
+
+  //   myIsSmoking, // 흡연 여부
+
+  //   myCommunicationStyle, // 연락 스타일
+  //   myPhone, // 폰 종류
+  //   myT, // T 여부
+  // };
   const params = useParams();
   const page_number = params.id;
   const navigate = useNavigate();
-  const [isChecked, setIsChecked] = useState([]);
+  const [isChecked, setIsChecked] = useState(false);
   const onClickPrev = () => {
     if (page_number > 0) {
       navigate(`/mykeyWord/${Number(page_number) - 1}`);
@@ -20,33 +40,12 @@ export default function QuestionContainerPage() {
       navigate("/idealKeyWord/0");
     }
   };
-  //복수 선택 기능
-  const onClickMultiOption = (event) => {
-    const clickedOptionId = event.target.id;
-    const isOptionSelected = isChecked.includes(clickedOptionId);
-    if (isOptionSelected) {
-      // 이미 선택된 옵션인 경우 제거
-      setIsChecked(isChecked.filter((option) => option !== clickedOptionId));
-    } else {
-      // 선택되지 않은 옵션인 경우 추가
-      setIsChecked([...isChecked, clickedOptionId]);
-    }
-    console.log(clickedOptionId);
-    console.log(...isChecked);
-  };
-
-  //단일 선택 기능
-  const onClickSingleOption = (event) => {
-    setIsChecked(event.target.id);
-  };
 
   return (
     <QuestionPresenterPage
       page_number={page_number}
       onClickPrev={onClickPrev}
       onClickNext={onClickNext}
-      onClickMultiOption={onClickMultiOption}
-      onClickSingleOption={onClickSingleOption}
       isChecked={isChecked}
     />
   );

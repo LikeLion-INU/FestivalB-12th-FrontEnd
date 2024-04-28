@@ -1,11 +1,13 @@
 export const questions = [
   {
+    key: "myDepartment",
     questionMain: "질문 1",
     questionSub: "를 선택해주세요",
     emphaticWord: "학과",
     options: [{ value: "예체대" }, { value: "공대" }, { value: "인문대" }],
   },
   {
+    key: "myStyle",
     questionMain: "질문 2",
     questionSub: "를 입력해주세요",
     emphaticWord: "나이",
@@ -13,13 +15,15 @@ export const questions = [
     options: [],
   },
   {
+    key: "myIsDoubleEyelid",
     questionMain: "질문 3",
     questionSub: "을 선택해주세요",
     emphaticWord: "스타일",
-    options: [{ value: "무쌍" }, { value: "유쌍" }],
-    multioption: true,
+    options: [{ value: "유쌍" }, { value: "무쌍" }],
+    multioption: false,
   },
   {
+    key: "myStyle",
     questionMain: "질문 4",
     questionSub: "을 선택해주세요",
     emphaticWord: "스타일",
@@ -32,6 +36,7 @@ export const questions = [
     multioption: true,
   },
   {
+    key: "myHairStyle",
     questionMain: "질문 5",
     questionSub: "을 선택해주세요",
     emphaticWord: "머리스타일",
@@ -52,12 +57,14 @@ export const questions = [
     multioption: true,
   },
   {
+    key: "myWorkOut",
     questionMain: "질문 7",
     questionSub: "치나요?",
     emphaticWord: "3대 500",
     options: [{ value: "O" }, { value: "X" }],
   },
   {
+    key: "myCommunicationStyle",
     questionMain: "질문 8",
     questionSub: "을 선택해주세요",
     emphaticWord: "연락 스타일",
@@ -65,18 +72,21 @@ export const questions = [
     multioption: true,
   },
   {
+    key: "myIsSmoking",
     questionMain: "질문 9",
     questionSub: "를 선택해주세요",
     emphaticWord: "흡연유무",
     options: [{ value: "흡연" }, { value: "비흡연" }],
   },
   {
+    key: "myPhone",
     questionMain: "질문 10",
     questionSub: "뭐 쓰시나요?",
     emphaticWord: "핸드폰",
     options: [{ value: "아이폰" }, { value: "갤럭시" }, { value: "기타" }],
   },
   {
+    key: "myT",
     questionMain: "질문 11",
     questionSub: "야?",
     emphaticWord: "T",

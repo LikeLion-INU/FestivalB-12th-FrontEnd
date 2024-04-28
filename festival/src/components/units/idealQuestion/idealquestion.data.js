@@ -1,17 +1,20 @@
 export const questions = [
   {
+    key: "idealDepartment",
     questionMain: "질문 1",
     questionSub: "를 선택해주세요",
     emphaticWord: "학과",
     options: [{ value: "예체대" }, { value: "공대" }, { value: "인문대" }],
   },
   {
+    key: "idealAge",
     questionMain: "질문 2",
     questionSub: "를 선택해주세요",
     emphaticWord: "나이",
     options: [{ value: "연상" }, { value: "연하" }, { value: "동갑" }],
   },
   {
+    key: "idealHeight",
     questionMain: "질문 3",
     questionSub: "을 선택해주세요",
     emphaticWord: "키",
@@ -24,13 +27,15 @@ export const questions = [
     multioption: true,
   },
   {
+    key: "idealIsDoubleEyelid",
     questionMain: "질문 4",
     questionSub: "을 선택해주세요",
     emphaticWord: "스타일",
-    options: [{ value: "무쌍" }, { value: "유쌍" }],
+    options: [{ value: "유쌍" }, { value: "무쌍" }],
     multioption: true,
   },
   {
+    key: "idealStyle",
     questionMain: "질문 5",
     questionSub: "을 선택해주세요",
     emphaticWord: "스타일",
@@ -43,6 +48,7 @@ export const questions = [
     multioption: true,
   },
   {
+    key: "idealHairStyle",
     questionMain: "질문 6",
     questionSub: "을 선택해주세요",
     emphaticWord: "머리스타일",
@@ -56,18 +62,21 @@ export const questions = [
     multioption: true,
   },
   {
+    key: "idealSimilarAnimals",
     questionMain: "질문 7",
     questionSub: "을 선택해주세요",
     emphaticWord: "닮은 동물",
     options: [],
   },
   {
+    key: "idealWorkOut",
     questionMain: "질문 8",
     questionSub: "좋으세요?",
     emphaticWord: "3대 500",
     options: [{ value: "O" }, { value: "X" }],
   },
   {
+    key: "idealCommunicationStyle",
     questionMain: "질문 9",
     questionSub: "을 선택해주세요",
     emphaticWord: "연락 스타일",
@@ -75,18 +84,21 @@ export const questions = [
     multioption: true,
   },
   {
+    key: "idealIsSmoking",
     questionMain: "질문 10",
     questionSub: "를 선택해주세요",
     emphaticWord: "흡연유무",
     options: [{ value: "흡연" }, { value: "비흡연" }],
   },
   {
+    key: "idealPhone",
     questionMain: "질문 11",
     questionSub: "뭐가 좋으세요?",
     emphaticWord: "핸드폰",
     options: [{ value: "아이폰" }, { value: "갤럭시" }, { value: "기타" }],
   },
   {
+    key: "idealT",
     questionMain: "질문 12",
     questionSub: "가 좋으세요?",
     emphaticWord: "T",

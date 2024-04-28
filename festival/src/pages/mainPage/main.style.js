@@ -5,6 +5,8 @@ export const Wrapper = styled.div`
   height: 812px;
   font-family: "Noto Sans KR";
   // border: 1px solid #bdbdbd;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Title = styled.div`
@@ -17,7 +19,6 @@ export const Title = styled.div`
 export const FormGroup = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* 왼쪽 정렬 */
   margin-left: 25px; /* 왼쪽 여백 추가 */
 `;
 
@@ -27,7 +28,6 @@ export const InputLabel = styled.p`
   margin-top: 80px;
   font-size: 14px;
   font-weight: 400px;
-  margin-left: -95px;
 `;
 
 export const Input = styled.input`
@@ -49,7 +49,6 @@ export const ButtonArea1 = styled.p`
 export const ButtonLabel = styled.p`
   font-size: 14px;
   font-weight: 500px;
-  margin-left: -95px;
 `;
 
 export const Button1 = styled.button`
@@ -73,12 +72,12 @@ export const ButtonArea2 = styled.div`
 `;
 
 export const Button2 = styled.button`
-  width: 312px;
-  height: 50px;
+  width: 300px;
+  height: 40px;
   font-size: 20px;
   font-weight: 500;
+  font-family: "Noto Sans KR";
   border: none;
-  border-radius: 12px;
-  background: #f1f1f1;
-  color: #222222;
+  border-radius: 20px;
+  background-color: #ff7ca3;
 `;

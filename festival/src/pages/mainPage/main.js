@@ -3,8 +3,9 @@ import * as S from "./main.style";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Modal } from "antd";
+function MainPage(props) {
+  //페이지번호로 구분
 
-function MainPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
   const onClickOk = () => {
@@ -12,18 +13,49 @@ function MainPage() {
   };
   const [isId, setIsId] = useState(false);
   const [isGender, setIsGender] = useState("");
+  const membersId = "";
   const onChangeId = (event) => {
     if (event.keyCode == 13) {
-      setIsId(event.target.id);
+      setIsId(event.target.value);
     }
   };
   const onChangeGender = (event) => {
-    if (event.target.id == "Female") {
-      setIsGender("Female");
+    if (event.target.id == "WOMAN") {
+      setIsGender("WOMAN");
     } else {
-      setIsGender("Male");
+      setIsGender("MAN");
     }
   };
+  const requestBody = {
+    inStarId: isId,
+    gender: isGender,
+  };
+  console.log(requestBody);
+  async function sendRequest() {
+    try {
+      const response = await fetch(
+        "https://likelion-meeting.p-e.kr/api/members/sign-up",
+        {
+          method: "POST", // POST 요청
+          headers: {
+            "Content-Type": "application/json", // 요청 바디의 형식을 JSON으로 설정
+          },
+          body: JSON.stringify(requestBody), // 요청 바디를 JSON 형식으로 직렬화
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json(); // 응답을 JSON 형식으로 변환
+      console.log(data.result.memberId); // 응답 데이터 출력
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  //instarId로 조회해서 해당하는 memberId 있으면 바로 매칭 결과 페이지로 넘어감
+  console.log(props.data);
   return (
     <S.Wrapper>
       <S.Title>키워드 소개팅</S.Title>
@@ -44,20 +76,18 @@ function MainPage() {
           <S.ButtonArea1>
             <S.ButtonLabel>성별을 선택하세요</S.ButtonLabel>
             <S.Button1
-              id="Female"
+              id="WOMAN"
               type="submit"
               onClick={onChangeGender}
-              style={
-                isGender === "Female" ? { backgroundColor: "#ff7ca3" } : {}
-              }
+              style={isGender === "WOMAN" ? { backgroundColor: "#ff7ca3" } : {}}
             >
               여성
             </S.Button1>
             <S.Button1
-              id="Male"
+              id="MAN"
               type="submit"
               onClick={onChangeGender}
-              style={isGender === "Male" ? { backgroundColor: "#ff7ca3" } : {}}
+              style={isGender === "MAN" ? { backgroundColor: "#ff7ca3" } : {}}
             >
               남성
             </S.Button1>
@@ -81,6 +111,7 @@ function MainPage() {
             onOk={() => {
               setIsModalOpen(false);
               navigate("/mykeyword/0");
+              sendRequest();
             }}
             onCancel={() => {
               setIsModalOpen(false);

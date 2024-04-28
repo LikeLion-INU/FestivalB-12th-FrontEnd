@@ -5,20 +5,24 @@ import MainPage from "./pages/mainPage/main";
 import MyKeyWordPage from "./pages/myKeyWordPage/index";
 import IdealKeyWordPage from "./pages/idealKeyWordPage/idealKeyWord";
 import MatchingPage from "./pages/matchingPage/matching";
-import ResultPage from "./pages/resultPage/result";
 import EndPage from "./pages/endPage/end";
 import KeywordQuestion from "./pages/myKeyWordPage/index";
+import { data } from "./data";
 function App() {
-  //최고 관리자
   return (
     <div className="App">
       <Routes>
-        <Route path="/main" element={<MainPage />}></Route>
-        <Route path="/mykeyWord/:id" element={<KeywordQuestion />}></Route>
-        <Route path="/idealKeyWord/:id" element={<IdealKeyWordPage />}></Route>
-        <Route path="/matching" element={<MatchingPage />}></Route>
-        <Route path="/result" element={<ResultPage />}></Route>
-        <Route path="/end" element={<EndPage />}></Route>
+        <Route path="/main" element={<MainPage data={data} />}></Route>
+        <Route
+          path="/mykeyWord/:id"
+          element={<KeywordQuestion data={data} />}
+        ></Route>
+        <Route
+          path="/idealKeyWord/:id"
+          element={<IdealKeyWordPage data={data} />}
+        ></Route>
+        <Route path="/matching" element={<MatchingPage data={data} />}></Route>
+        <Route path="/end" element={<EndPage data={data} />}></Route>
       </Routes>
     </div>
   );
