@@ -14,8 +14,8 @@ export let data = {
     myT: true,
   },
   idealKeyword: {
-    idealHeight: [Number],
-    idealAge: [Number],
+    idealHeight: [],
+    idealAge: "",
     idealStyle: [],
     idealHairStyle: [],
     idealIsDoubleEyelid: true,

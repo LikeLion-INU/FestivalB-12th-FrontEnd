@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { questions } from "./idealquestion.data";
 import { useState } from "react";
 import IdealQuestionPresenter from "./idealquestion.presenter";

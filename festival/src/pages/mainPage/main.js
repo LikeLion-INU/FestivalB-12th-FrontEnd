@@ -3,21 +3,44 @@ import * as S from "./main.style";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Modal } from "antd";
+import axios from "axios";
 function MainPage(props) {
   //페이지번호로 구분
-
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
-  const onClickOk = () => {
-    setIsModalOpen(true);
-  };
-  const [isId, setIsId] = useState(false);
+  //여기서 이제 memberid 있는지 확인 -> 없으면 isMember=false & 바로 결과페이지로 이동
+
+  //isMember가 false(빈문자열)면 성별 버튼 뜸
+  const [isMember, setIsMember] = useState(true);
+  const [isId, setIsId] = useState("");
   const [isGender, setIsGender] = useState("");
-  const membersId = "";
-  const onChangeId = (event) => {
-    if (event.keyCode == 13) {
-      setIsId(event.target.value);
+  let memberId = "";
+  // POST 요청 만들기
+  const onClickOk = async () => {
+    //setIsModalOpen(true);
+    try {
+      const response = await axios.post(
+        "https://likelion-meeting.p-e.kr/api/members/sign-in",
+        isId,
+        {
+          headers: {
+            "Content-Type": "text/plain",
+          },
+        }
+      );
+      memberId = response?.data?.result?.memberId;
+      navigate("/end", { state: { isMember: memberId } });
+      console.log(isMember);
+      console.log("회원이야!");
+    } catch (error) {
+      console.log("회원아님");
+      setIsMember(false);
+      setIsModalOpen(true);
+      console.error(error);
     }
+  };
+  const onChangeId = (event) => {
+    setIsId(event.target.value);
   };
   const onChangeGender = (event) => {
     if (event.target.id == "WOMAN") {
@@ -30,6 +53,7 @@ function MainPage(props) {
     inStarId: isId,
     gender: isGender,
   };
+
   console.log(requestBody);
   async function sendRequest() {
     try {
@@ -48,8 +72,10 @@ function MainPage(props) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.json(); // 응답을 JSON 형식으로 변환
-      console.log(data.result.memberId); // 응답 데이터 출력
+      memberId = data?.result?.memberId;
+      localStorage.setItem("memberId", memberId);
     } catch (error) {
+      setIsGender(false);
       console.log(error);
     }
   }
@@ -69,10 +95,10 @@ function MainPage(props) {
             placeholder="ex) @ lion1234"
             autoComplete="off"
             required
-            onKeyDown={onChangeId}
+            onChange={onChangeId}
           />
         </S.InputArea>
-        {isId ? (
+        {!isMember ? (
           <S.ButtonArea1>
             <S.ButtonLabel>성별을 선택하세요</S.ButtonLabel>
             <S.Button1
@@ -99,13 +125,13 @@ function MainPage(props) {
           <S.Button2
             type="submit"
             onClick={onClickOk}
-            style={isGender ? { backgroundColor: "#ff7ca3" } : {}}
-            disabled={isGender ? false : true}
+            style={isId ? { backgroundColor: "#ff7ca3" } : {}}
+            disabled={isId ? false : true}
           >
             확인
           </S.Button2>
         </S.ButtonArea2>
-        {isModalOpen ? (
+        {isModalOpen && isGender ? (
           <Modal
             open={isModalOpen}
             onOk={() => {
