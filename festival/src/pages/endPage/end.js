@@ -1,4 +1,4 @@
-import * as S from "../../styles/endStyle";
+import * as S from "./endStyle";
 import { InstagramOutlined, CopyOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import { message } from "antd";

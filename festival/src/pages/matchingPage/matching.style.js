@@ -1,13 +1,15 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  width: 375px;
-  height: 829px;
+  width: 100%;
+  //vh: 화면 전체의 %
+  height: 97.5vh;
+  border: 1px solid red;
   background: #f0d1d8;
 `;
 
 export const Image = styled.img`
-  width: 375px;
+  width: 100%;
   height: 150px;
 `;
 
@@ -44,7 +46,7 @@ export const Info = styled.div`
   font-weight: 600;
   font-family: "Noto Sans KR";
   color: black;
-  margin-top: 50px;
+  margin-top: 10%;
 `;
 
 export const Image2 = styled.img`

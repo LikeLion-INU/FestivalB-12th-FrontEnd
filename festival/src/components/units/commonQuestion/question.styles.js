@@ -5,8 +5,9 @@ export const Icon = styled(LeftOutlined)`
   font-size: 25px;
 `;
 export const Wrapper = styled.div`
-  width: 375px;
-  height: 812px;
+  width: 95%;
+  margin-left: 1.5%;
+  height: 100%;
   display: flex;
   flex-direction: column;
 `;
@@ -64,7 +65,12 @@ export const Margin = styled.div`
 export const QuestionWrapper = styled.div`
   display: block;
   width: 90%;
+  margin-left: -1%;
   margin-top: 70px; /* 수평 가운데 정렬 */
+  //최대 width 375px인 요소만 변경
+  @media only screen and (max-width: 375px) {
+    margin-left: -3%;
+  }
 `;
 export const QuestionBtn = styled.div`
   background-color: ${(props) => (props.isChecked ? "#ffe5ed" : "#F0F0F0")};

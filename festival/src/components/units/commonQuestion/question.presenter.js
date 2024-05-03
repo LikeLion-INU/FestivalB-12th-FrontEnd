@@ -8,7 +8,6 @@ import { useState, useEffect } from "react";
 
 export default function QuestionPresenterPage(props) {
   const [selectedOptions, setSelectedOptions] = useState([]);
-
   // 질문이 넘어갈 때마다 답변 데이터를 초기화하는 함수
   const resetAnswers = () => {
     setSelectedOptions([]);

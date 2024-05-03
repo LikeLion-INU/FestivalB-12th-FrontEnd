@@ -1,11 +1,12 @@
 import styled from "@emotion/styled";
 import { Input } from "antd";
 export const Wrapper = styled.div`
-  width: 375px;
-  height: 700px;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  margin-top: 100px;
+  align-items: center;
+  margin-top: 5%;
 `;
 
 export const Group = styled.div`
@@ -16,7 +17,6 @@ export const Group = styled.div`
 export const Logo = styled.img`
   width: 241px;
   height: 48px;
-  margin-left: 60px;
 `;
 
 export const Label = styled.span`
@@ -29,7 +29,6 @@ export const Label = styled.span`
 export const CoupleImage = styled.img`
   width: 90%;
   height: 179px;
-  margin-left: 10px;
   padding: 70px 0px;
 `;
 
@@ -44,7 +43,6 @@ export const Text = styled.div`
 export const Instagram = styled(Input)`
   width: 70%;
   height: 40px;
-  margin-left: 50px;
   font-weight: bold;
   :hover {
     background-color: #ffe5ed;

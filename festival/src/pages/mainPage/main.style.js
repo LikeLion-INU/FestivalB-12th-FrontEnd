@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  width: 375px;
+  width: 95%;
   height: 812px;
   font-family: "Noto Sans KR";
   // border: 1px solid #bdbdbd;
@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
 
 export const Title = styled.div`
   padding-top: 155px;
+  margin-left: 3%;
   color: #ff7ca3;
   font-size: 32px;
   font-weight: 600;
