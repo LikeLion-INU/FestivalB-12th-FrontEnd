@@ -1,22 +1,40 @@
 import * as S from "../matchingPage/matching.style.js";
 import { data } from "../../data";
 import axios from "axios";
-export default function MatchingPage(props) {
-  console.log(data);
-  // memberId를 localStorage에서 꺼내기
-  const storedMemberId = localStorage.getItem("memberId");
-  axios
-    .post(
-      `https://likelion-meeting.p-e.kr/api/members/${storedMemberId}/choice`,
-      data
-    )
-    .then((response) => {
-      console.log("Response:", response);
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
-  console.log(props.data);
+export default function MatchingPage() {
+  let memberId = "";
+  const requestBody = localStorage.getItem("requestBody");
+  console.log(requestBody);
+  const sendRequest = async () => {
+    try {
+      const response = await axios.post(
+        "https://likelion-meeting.p-e.kr/api/members/sign-up",
+        requestBody, // parse the JSON string
+        {
+          headers: {
+            "Content-Type": "application/json", // specify JSON content type
+          },
+        }
+      );
+      memberId = response.data?.result?.memberId;
+      if (memberId !== "") {
+        axios
+          .post(
+            `https://likelion-meeting.p-e.kr/api/members/${memberId}/choice`,
+            data // Ensure 'data' is defined
+          )
+          .then((response) => {
+            console.log("Response:", response);
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  sendRequest();
   return (
     <S.Wrapper style={{ position: "relative" }}>
       <S.Image src="/images/cherry-blossom.png" />

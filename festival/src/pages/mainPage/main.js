@@ -53,35 +53,8 @@ function MainPage(props) {
     inStarId: isId,
     gender: isGender,
   };
-
-  console.log(requestBody);
-  async function sendRequest() {
-    try {
-      const response = await fetch(
-        "https://likelion-meeting.p-e.kr/api/members/sign-up",
-        {
-          method: "POST", // POST 요청
-          headers: {
-            "Content-Type": "application/json", // 요청 바디의 형식을 JSON으로 설정
-          },
-          body: JSON.stringify(requestBody), // 요청 바디를 JSON 형식으로 직렬화
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data = await response.json(); // 응답을 JSON 형식으로 변환
-      memberId = data?.result?.memberId;
-      localStorage.setItem("memberId", memberId);
-    } catch (error) {
-      setIsGender(false);
-      console.log(error);
-    }
-  }
-
-  //instarId로 조회해서 해당하는 memberId 있으면 바로 매칭 결과 페이지로 넘어감
-  console.log(props.data);
+  localStorage.setItem("requestBody", JSON.stringify(requestBody));
+  console.log(JSON.parse(localStorage.getItem("requestBody")));
   return (
     <S.Wrapper>
       <S.Title>키워드 소개팅</S.Title>
@@ -137,7 +110,6 @@ function MainPage(props) {
             onOk={() => {
               setIsModalOpen(false);
               navigate("/mykeyword/0");
-              sendRequest();
             }}
             onCancel={() => {
               setIsModalOpen(false);

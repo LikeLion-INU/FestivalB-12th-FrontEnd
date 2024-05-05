@@ -4,7 +4,6 @@ export const Wrapper = styled.div`
   width: 100%;
   //vh: 화면 전체의 %
   height: 97.5vh;
-  border: 1px solid red;
   background: #f0d1d8;
 `;
 
