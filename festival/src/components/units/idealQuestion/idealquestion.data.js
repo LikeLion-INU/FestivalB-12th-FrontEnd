@@ -5,6 +5,7 @@ export const questions = [
     questionSub: "를 선택해주세요",
     emphaticWord: "이상형의 학과",
     options: [{ value: "예체대" }, { value: "공대" }, { value: "인문대" }],
+    multioption: true,
   },
   {
     key: "idealAge",
@@ -12,6 +13,7 @@ export const questions = [
     questionSub: "를 선택해주세요",
     emphaticWord: "이상형의 나이",
     options: [{ value: "연상" }, { value: "연하" }, { value: "동갑" }],
+    multioption: true,
   },
   {
     key: "idealHeight",
@@ -67,6 +69,7 @@ export const questions = [
     questionSub: "을 선택해주세요",
     emphaticWord: "좋아하는 동물상",
     options: [],
+    multioption: true,
   },
   {
     key: "idealWorkOut",
@@ -74,6 +77,7 @@ export const questions = [
     questionSub: "좋으세요?",
     emphaticWord: "3대 500",
     options: [{ value: "O" }, { value: "X" }],
+    multioption: true,
   },
   {
     key: "idealCommunicationStyle",
@@ -89,6 +93,7 @@ export const questions = [
     questionSub: "를 선택해주세요",
     emphaticWord: "이상형의 흡연유무",
     options: [{ value: "흡연" }, { value: "비흡연" }],
+    multioption: true,
   },
   {
     key: "idealPhone",
@@ -96,6 +101,7 @@ export const questions = [
     questionSub: "뭐가 좋으세요?",
     emphaticWord: "이상형 핸드폰",
     options: [{ value: "아이폰" }, { value: "갤럭시" }, { value: "기타" }],
+    multioption: true,
   },
   {
     key: "idealT",
@@ -103,5 +109,6 @@ export const questions = [
     questionSub: "가 좋으세요?",
     emphaticWord: "T",
     options: [{ value: "O" }, { value: "겠냐?" }],
+    multioption: true,
   },
 ];

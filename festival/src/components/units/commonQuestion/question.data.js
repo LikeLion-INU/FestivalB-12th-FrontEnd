@@ -89,7 +89,7 @@ export const questions = [
     key: "myT",
     questionMain: "질문 11",
     questionSub: "야?",
-    emphaticWord: "T",
+    emphaticWord: "너 T",
     options: [{ value: "O" }, { value: "겠냐?" }],
   },
 ];
