@@ -30,10 +30,7 @@ function MainPage(props) {
       );
       memberId = response?.data?.result?.memberId;
       navigate("/end", { state: { isMember: memberId } });
-      console.log(isMember);
-      console.log("회원이야!");
     } catch (error) {
-      console.log("회원아님");
       setIsMember(false);
       setIsModalOpen(true);
       console.error(error);
@@ -54,7 +51,6 @@ function MainPage(props) {
     gender: isGender,
   };
   localStorage.setItem("requestBody", JSON.stringify(requestBody));
-  console.log(JSON.parse(localStorage.getItem("requestBody")));
   return (
     <S.Wrapper>
       <S.Title>키워드 소개팅</S.Title>

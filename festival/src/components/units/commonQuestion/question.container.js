@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { questions } from "./question.data";
 import { useState } from "react";
 import QuestionPresenterPage from "./question.presenter";
-export default function QuestionContainerPage(props) {
+export default function QuestionContainerPage() {
   const params = useParams();
   const page_number = params.id;
   const navigate = useNavigate();

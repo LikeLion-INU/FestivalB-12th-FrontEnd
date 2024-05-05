@@ -48,7 +48,6 @@ export default function QuestionPresenterPage(props) {
           value === questions[props.page_number].options[0].value;
       }
     }
-    console.log(data);
   };
 
   // 질문이 변경될 때 답변 데이터를 초기화합니다.
@@ -61,7 +60,10 @@ export default function QuestionPresenterPage(props) {
       <S.Wrapper>
         <S.NaviGroup>
           <S.Navi src="/images/left_arrow.png" onClick={props.onClickPrev} />
-          <S.Navi src="/images/right_arrow.png" onClick={props.onClickNext} />
+          <S.Navi
+            src="/images/right_arrow.png"
+            onClick={selectedOptions.length > 0 ? props.onClickNext : null}
+          />
         </S.NaviGroup>
         <Progress percent={props.page_number * 10} strokeColor="#FF7CA3" />
         <S.QuestionGroup>

@@ -16,6 +16,7 @@ export default function MatchingPage() {
           },
         }
       );
+      console.log(response.data);
       memberId = response.data?.result?.memberId;
       if (memberId !== "") {
         axios
@@ -51,13 +52,18 @@ export default function MatchingPage() {
       </S.Label>
       <S.Group>
         <S.Question>매칭 결과는 언제 알 수 있나요?</S.Question>
-        <S.Answer>매칭이 완료되면 인스타로 알려드릴 예정이에요.</S.Answer>
+        <S.Answer>
+          매칭이 완료되면
+          <br />
+          인스타그램으로 알려드릴 예정이에요.
+        </S.Answer>
       </S.Group>
       <S.Group>
         <S.Question>매칭 결과는 어떻게 알 수 있나요?</S.Question>
         <S.Answer>
-          신청 시에 가입한 인스타 아이디로 로그인하시면 상대방 인스타 아이디를
-          알 수 있어요.
+          신청 시에 가입한 인스타 아이디로 로그인하시면
+          <br />
+          상대방 인스타 아이디를 알 수 있어요
         </S.Answer>
       </S.Group>
       <S.Image2 src="/images/frame-people.png" />

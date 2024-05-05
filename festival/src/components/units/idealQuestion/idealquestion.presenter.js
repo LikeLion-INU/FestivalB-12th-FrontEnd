@@ -8,7 +8,6 @@ import { data } from "../../../data";
 
 export default function IdealPresenterPage(props) {
   const [isModalOpen, setIsModalOpen] = useState(true);
-
   const [selectedOptions, setSelectedOptions] = useState([]);
   // 질문이 넘어갈 때마다 답변 데이터를 초기화하는 함수
   const resetAnswers = () => {
@@ -89,7 +88,10 @@ export default function IdealPresenterPage(props) {
       <S.Wrapper>
         <S.NaviGroup>
           <S.Navi src="/images/left_arrow.png" onClick={props.onClickPrev} />
-          <S.Navi src="/images/right_arrow.png" onClick={props.onClickNext} />
+          <S.Navi
+            src="/images/right_arrow.png"
+            onClick={selectedOptions.length > 0 ? props.onClickNext : null}
+          />
         </S.NaviGroup>
         <Progress percent={props.page_number * 9.5} strokeColor="#FF7CA3" />
         <S.QuestionGroup>

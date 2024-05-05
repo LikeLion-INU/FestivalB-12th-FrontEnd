@@ -33,8 +33,8 @@ export default function IdealContainerPage() {
       // 선택되지 않은 옵션인 경우 추가
       setIsChecked([...isChecked, clickedOptionId]);
     }
-    console.log(clickedOptionId);
-    console.log(...isChecked);
+    // console.log(clickedOptionId);
+    // console.log(...isChecked);
   };
 
   //단일 선택 기능
