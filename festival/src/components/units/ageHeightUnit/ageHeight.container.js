@@ -1,4 +1,9 @@
 import AgeHeightPresenter from "./ageHeight.presenter";
-export default function AgeHeightComponent() {
-  return <AgeHeightPresenter />;
+export default function AgeHeightComponent(props) {
+  return (
+    <AgeHeightPresenter
+      setMyAge={props.setMyAge}
+      setMyHeight={props.setMyHeight}
+    />
+  );
 }

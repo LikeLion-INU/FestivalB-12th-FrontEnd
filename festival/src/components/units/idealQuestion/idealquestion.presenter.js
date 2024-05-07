@@ -15,6 +15,7 @@ export default function IdealPresenterPage(props) {
     // 기타 답변 데이터를 초기화하는 작업을 추가할 수 있습니다.
   };
 
+  const [myAnimal, setMyAnimal] = useState("");
   const toggleOption = (keyValue) => {
     const propKey = questions[props.page_number].key;
     const isMultiOption = questions[props.page_number].multioption;
@@ -90,10 +91,15 @@ export default function IdealPresenterPage(props) {
           <S.Navi src="/images/left_arrow.png" onClick={props.onClickPrev} />
           <S.Navi
             src="/images/right_arrow.png"
-            onClick={selectedOptions.length > 0 ? props.onClickNext : null}
+            onClick={
+              selectedOptions.length > 0 ||
+              (props.page_number === "4" && myAnimal !== "")
+                ? props.onClickNext
+                : null
+            }
           />
         </S.NaviGroup>
-        <Progress percent={props.page_number * 9.5} strokeColor="#FF7CA3" />
+        <Progress percent={props.page_number * 15} strokeColor="#FF7CA3" />
         <S.QuestionGroup>
           <S.Question>{questions[props.page_number].questionMain}</S.Question>
           <S.Question>
@@ -106,7 +112,9 @@ export default function IdealPresenterPage(props) {
         <S.Option>
           {questions[props.page_number].multioption ? "(복수선택가능)" : ""}
         </S.Option>
-        {props.page_number === "6" && <AnimalComponent />}
+        {props.page_number === "4" && (
+          <AnimalComponent setMyAnimal={setMyAnimal} />
+        )}
         <S.QuestionWrapper>
           {questions[props.page_number].options.map((option, index) => (
             <S.QuestionBtn

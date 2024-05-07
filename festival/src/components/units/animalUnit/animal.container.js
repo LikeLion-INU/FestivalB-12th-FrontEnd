@@ -1,6 +1,6 @@
 import AnimalPresenter from "./animal.presenter";
 import { data } from "../../../data";
-export default function AnimalComponent() {
+export default function AnimalComponent(props) {
   const onClickAnimal = (event) => {
     const keyword = window.location.pathname.includes("mykeyWord")
       ? data.myKeyword.mySimilarAnimals
@@ -12,6 +12,7 @@ export default function AnimalComponent() {
       nameElement.style.border = "none";
     } else {
       keyword.push(event.currentTarget.id);
+      props.setMyAnimal(event.currentTarget.id);
       nameElement.style.backgroundColor = "#ffe5ed";
       nameElement.style.border = "1px solid #ff7ca3";
     }

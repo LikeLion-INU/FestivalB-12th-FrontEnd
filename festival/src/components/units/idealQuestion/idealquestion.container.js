@@ -11,7 +11,7 @@ export default function IdealContainerPage() {
     if (page_number > 0) {
       navigate(`/idealKeyWord/${Number(page_number) - 1}`);
     } else if (page_number - 1 < 0) {
-      navigate(`/mykeyWord/10`);
+      navigate(`/mykeyWord/6`);
     }
   };
   const onClickNext = () => {

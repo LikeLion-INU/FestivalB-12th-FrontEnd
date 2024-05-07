@@ -1,7 +1,7 @@
 import * as S from "./ageHeight.style";
 import { questions } from "../commonQuestion/question.data";
 import { data } from "../../../data";
-export default function AgeHeightPresenter() {
+export default function AgeHeightPresenter(props) {
   return (
     <S.Wrapper>
       <S.InputAgeContainer>
@@ -14,6 +14,7 @@ export default function AgeHeightPresenter() {
           required
           onChange={(event) => {
             data.myKeyword.myAge = event.target.value;
+            props.setMyAge(event.target.value);
           }}
         />
         <S.AgeText>세</S.AgeText>
@@ -34,6 +35,7 @@ export default function AgeHeightPresenter() {
           required
           onChange={(event) => {
             data.myKeyword.myHeight = event.target.value;
+            props.setMyHeight(event.target.value);
           }}
         />
         <S.HeightText>cm</S.HeightText>

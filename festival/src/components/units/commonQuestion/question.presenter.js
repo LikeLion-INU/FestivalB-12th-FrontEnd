@@ -7,6 +7,9 @@ import { data } from "../../../data";
 import { useState, useEffect } from "react";
 
 export default function QuestionPresenterPage(props) {
+  const [myAge, setMyAge] = useState(data.myKeyword.myAge);
+  const [myHeight, setMyHeight] = useState(data.myKeyword.myHeight);
+  const [myAnimal, setMyAnimal] = useState("");
   const [selectedOptions, setSelectedOptions] = useState([]);
   // 질문이 넘어갈 때마다 답변 데이터를 초기화하는 함수
   const resetAnswers = () => {
@@ -49,12 +52,15 @@ export default function QuestionPresenterPage(props) {
       }
     }
   };
+  useEffect(() => {
+    setMyAge(data.myKeyword.myAge);
+    setMyHeight(data.myKeyword.myHeight);
+  }, [data.myKeyword.myAge, data.myKeyword.myHeight]);
 
   // 질문이 변경될 때 답변 데이터를 초기화합니다.
   useEffect(() => {
     resetAnswers();
   }, [props.page_number]);
-
   return (
     <>
       <S.Wrapper>
@@ -62,10 +68,16 @@ export default function QuestionPresenterPage(props) {
           <S.Navi src="/images/left_arrow.png" onClick={props.onClickPrev} />
           <S.Navi
             src="/images/right_arrow.png"
-            onClick={selectedOptions.length > 0 ? props.onClickNext : null}
+            onClick={
+              selectedOptions.length > 0 ||
+              (props.page_number === "1" && myAge !== 0 && myHeight !== 0) ||
+              (props.page_number === "3" && myAnimal !== "")
+                ? props.onClickNext
+                : null
+            }
           />
         </S.NaviGroup>
-        <Progress percent={props.page_number * 10} strokeColor="#FF7CA3" />
+        <Progress percent={props.page_number * 17} strokeColor="#FF7CA3" />
         <S.QuestionGroup>
           <S.Question>{questions[props.page_number].questionMain}</S.Question>
           <S.Question>
@@ -79,8 +91,12 @@ export default function QuestionPresenterPage(props) {
           {questions[props.page_number].multioption ? "(복수선택가능)" : ""}
           {props.page_number === 1 ? "(만 나이 X)" : ""}
         </S.Option>
-        {props.page_number === "1" && <AgeHeightComponent />}
-        {props.page_number === "5" && <AnimalComponent />}
+        {props.page_number === "1" && (
+          <AgeHeightComponent setMyAge={setMyAge} setMyHeight={setMyHeight} />
+        )}
+        {props.page_number === "3" && (
+          <AnimalComponent setMyAnimal={setMyAnimal} />
+        )}
         <S.QuestionWrapper>
           {questions[props.page_number].options.map((option, index) => (
             <S.QuestionBtn
